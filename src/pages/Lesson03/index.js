@@ -4,8 +4,12 @@ import Chart from "../../components/Chart03";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  //console.log(input);
+  //console.log(input.filter( (element) => element.gender == '男性' ));
+  return input.filter( (element) => element.gender === '男性' ); // ここを作りましょう！
 };
+
+
 
 const Lesson = () => {
   return (
