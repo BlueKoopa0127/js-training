@@ -4,7 +4,17 @@ import Chart from "../../components/Chart04";
 import instruction from "./instruction.md";
 
 const convertData = (input) => {
-  return []; // ここを作りましょう！
+  console.log(input);
+  const species = Array.from(new Set(input.map(({ species }) => species)));
+  console.log(species);
+  return species.map((species) => {
+    return {
+      id: species,
+      data: input
+        .filter((item) => item.species === species)
+        .map(({ sepalLength: x, petalWidth: y }) => ({ x, y })),
+    };
+  }); // ここを作りましょう！
 };
 
 const Lesson = () => {
